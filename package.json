@@ -1,0 +1,19 @@
+{
+  "name": "snaplink",
+  "description": "URL shortener with click analytics, custom aliases, QR codes and a built-in dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "author": "John Key <https://github.com/johnkey98>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

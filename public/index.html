@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnapLink — URL Shortener with Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Snap<span>Link</span></h1>
+        <p class="tagline">Short links, real analytics — custom aliases, QR codes and click dashboards.</p>
+      </header>
+
+      <form id="shorten-form" class="card">
+        <div class="row">
+          <input id="url" type="url" required placeholder="https://example.com/your-long-url" />
+          <button type="submit" class="primary">Shorten</button>
+        </div>
+        <details>
+          <summary>Advanced options (custom alias & expiry)</summary>
+          <div class="row">
+            <input id="alias" placeholder="custom alias (optional)" pattern="[A-Za-z0-9_-]{3,30}" />
+            <input id="expiry" type="number" min="0" max="365" placeholder="expiry days (0 = never)" />
+          </div>
+        </details>
+        <p id="form-error" class="error hidden"></p>
+      </form>
+
+      <section id="result" class="card result hidden">
+        <img id="qr" alt="QR code" width="120" height="120" />
+        <div class="result-body">
+          <a id="short-url" class="short" target="_blank" rel="noopener"></a>
+          <span id="dest-url" class="dest"></span>
+        </div>
+        <button id="copy-btn" class="ghost">Copy</button>
+      </section>
+
+      <section class="card">
+        <div class="list-head">
+          <h2>Your links</h2>
+          <span id="total-clicks" class="badge"></span>
+        </div>
+        <div id="links-list" class="links"></div>
+      </section>
+
+      <section id="stats" class="card hidden">
+        <div class="list-head">
+          <h2>Analytics — <span id="stats-code"></span></h2>
+          <button id="stats-close" class="ghost">Close</button>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><b id="st-total">0</b><span>total clicks</span></div>
+          <div class="stat"><b id="st-refs">0</b><span>referrers</span></div>
+          <div class="stat"><b id="st-created">—</b><span>created</span></div>
+        </div>
+        <canvas id="chart" height="180"></canvas>
+        <div id="referrers" class="referrers"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

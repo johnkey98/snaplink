@@ -1,0 +1,15 @@
+{
+  "my-github": {
+    "code": "my-github",
+    "url": "https://github.com/johnkey98",
+    "createdAt": "2026-09-27T23:29:24.344Z",
+    "expiresAt": null,
+    "clicks": [
+      {
+        "ts": "2026-09-27T23:29:24.352Z",
+        "referrer": "direct",
+        "ua": "curl/8.14.1"
+      }
+    ]
+  }
+}

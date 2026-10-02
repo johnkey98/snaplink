@@ -1,0 +1,111 @@
+:root {
+  --bg: #0f1222;
+  --card: #181c30;
+  --border: #2a2f4a;
+  --text: #e6e8f2;
+  --muted: #8f93ad;
+  --accent: #6c5ce7;
+  --accent-2: #48dbfb;
+  --danger: #ff6b6b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: radial-gradient(1200px 600px at 20% -10%, #232856 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: 'Sora', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 40px 16px;
+}
+
+.container { max-width: 720px; margin: 0 auto; display: grid; gap: 16px; }
+
+header { text-align: center; margin-bottom: 8px; }
+h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; }
+h1 span { color: var(--accent-2); }
+.tagline { color: var(--muted); margin-top: 6px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.row { display: flex; gap: 10px; }
+.row input { flex: 1; }
+
+input {
+  background: #0f1329;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 13px 15px;
+  font: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus { border-color: var(--accent); }
+
+button {
+  font: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 22px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.15s;
+}
+button:active { transform: scale(0.97); }
+button.primary { background: var(--accent); color: white; }
+button.primary:hover { background: #5b4bd5; }
+button.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 8px 14px; }
+button.ghost:hover { color: var(--text); border-color: var(--muted); }
+
+details { margin-top: 12px; }
+summary { color: var(--muted); font-size: 0.85rem; cursor: pointer; }
+details .row { margin-top: 10px; }
+
+.error { color: var(--danger); font-size: 0.85rem; margin-top: 10px; }
+.hidden { display: none !important; }
+
+.result { display: flex; align-items: center; gap: 16px; }
+.result-body { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.short { color: var(--accent-2); font-weight: 700; font-size: 1.1rem; text-decoration: none; word-break: break-all; }
+.short:hover { text-decoration: underline; }
+.dest { color: var(--muted); font-size: 0.82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#qr { border-radius: 8px; background: white; }
+
+.list-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+h2 { font-size: 1.05rem; }
+.badge { background: var(--accent); border-radius: 999px; padding: 4px 12px; font-size: 0.78rem; font-weight: 700; }
+
+.links { display: grid; gap: 10px; }
+.link-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border: 1px solid var(--border);
+  border-radius: 12px; background: #131730;
+}
+.link-main { flex: 1; min-width: 0; }
+.link-code { color: var(--accent-2); font-weight: 700; text-decoration: none; }
+.link-url { display: block; color: var(--muted); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.link-clicks { text-align: center; }
+.link-clicks b { display: block; font-size: 1.1rem; }
+.link-clicks span { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.empty { color: var(--muted); text-align: center; padding: 20px 0; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+.stat { background: #131730; border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+.stat b { font-size: 1.4rem; display: block; }
+.stat span { font-size: 0.75rem; color: var(--muted); }
+#chart { background: #131730; border: 1px solid var(--border); border-radius: 12px; padding: 10px; }
+
+.referrers { margin-top: 14px; display: grid; gap: 6px; }
+.ref-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted); }
+.ref-row b { color: var(--text); }
+
+footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 10px; }
+footer a { color: var(--accent-2); }
